@@ -1,0 +1,107 @@
+.card_item {
+  width: 274px;
+}
+
+.card_img {
+  width: 274px;
+  height: 268px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.make_model_year_container {
+  display: flex;
+  gap: 5px;
+}
+
+.card_main_title {
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+
+.card_make_model_year {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-family: 'Manrope-500', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #121417;
+}
+
+.card_make,
+.card_model,
+.card_year,
+.card_model,
+.card_city,
+.card_country,
+.card_company {
+  white-space: nowrap;
+}
+
+.card_model {
+  color: #3470ff;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+.card_model::after {
+  content: ',';
+  color: #121417;
+}
+
+.card_rental_price {
+  margin-right: 10px;
+}
+
+.card_description {
+  /* margin-bottom: 4px; */
+}
+
+.card_addres_company_premium {
+  display: flex;
+  gap: 6px;
+  font-family: 'Manrope-400', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(18, 20, 23, 0.5);
+  margin-bottom: 4px;
+}
+
+.card_type_model_mileage_functionality {
+  display: flex;
+  gap: 6px;
+  white-space: nowrap;
+  font-family: 'Manrope-400', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(18, 20, 23, 0.5);
+  margin-bottom: 28px;
+}
+
+.card_functionality_container {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card_functionality {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: calc(100% - 130px);
+}
+
+.card_btn_learn_more {
+  width: 100%;
+  height: 44px;
+  border-radius: 12px;
+  border: none;
+  background: #3470ff;
+  font-family: 'Manrope-600', sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #fff;
+}
