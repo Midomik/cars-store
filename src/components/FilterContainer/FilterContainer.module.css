@@ -1,0 +1,84 @@
+.filter_container {
+  display: flex;
+  justify-content: center;
+}
+
+.filter_form {
+  margin: 0 auto;
+  display: flex;
+  gap: 18px;
+}
+.select_brand_label {
+  min-width: 224px;
+}
+
+.select_rental_price_label {
+  min-width: 124px;
+}
+.select_title {
+  font-family: "Manrope-500";
+  font-size: 14px;
+  line-height: 1.28;
+  color: var(--description-item-color);
+}
+
+.mileage_from,
+.mileage_to {
+  max-width: 160px;
+  box-sizing: border-box;
+  padding: 14px 0;
+  background-color: #f7f7fb;
+  border: none;
+  padding-left: 24px;
+  font-family: "Manrope-500", sans-serif;
+  font-size: 18px;
+  line-height: 1.11111;
+  color: var(--black-bold-color);
+}
+.mileage_from::placeholder,
+.mileage_to::placeholder {
+  font-family: "Manrope-500", sans-serif;
+  font-size: 18px;
+  line-height: 1.11111;
+  color: var(--black-bold-color);
+}
+.mileage_from:focus,
+.mileage_to:focus {
+  outline: none;
+  background-color: rgba(138, 138, 137, 0.2);
+}
+
+.mileage_from:focus,
+.mileage_from:focus + .mileage_to {
+  border-right: none;
+}
+
+.mileage_from {
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+  border-right: 1px solid rgba(138, 138, 137, 0.2);
+}
+
+.mileage_to {
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.mileage_label {
+}
+
+.filter_select {
+}
+
+.filter_btn_submit {
+  margin-top: auto;
+  width: 136px;
+  height: 48px;
+  background-color: #3470ff;
+  border-radius: 12px;
+  border: none;
+  font-family: "Manrope-600", sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: var(--white-color);
+}

@@ -1,0 +1,37 @@
+.css-1jqq78o-placeholder {
+  font-family: "Manrope-500", sans-serif;
+  font-size: 18px;
+  line-height: 1.11111;
+  color: var(--black-bold-color) !important;
+}
+
+.css-1u9des2-indicatorSeparator {
+  display: none;
+}
+
+.css-1fdsijx-ValueContainer {
+  padding-left: 18px !important;
+}
+.css-1etyuim-indicatorContainer {
+  padding-right: 14px !important;
+}
+
+#react-select-2-listbox,
+#react-select-3-listbox {
+  /* padding-top: 0 !important;
+  padding-bottom: 0 !important; */
+  height: 272px !important;
+}
+#react-select-3-listbox {
+  height: 188px !important;
+}
+.css-1dimb5e-singleValue {
+  font-family: "Manrope-500", sans-serif;
+  font-size: 18px;
+  line-height: 1.11111;
+  color: var(--black-bold-color) !important;
+}
+
+/* .css-x06xtr-option {
+  background-color: var(--filter-select-color) !important;
+} */
