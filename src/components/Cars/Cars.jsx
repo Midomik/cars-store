@@ -1,20 +1,9 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCars } from '../../redux/cars/cars.reducer';
-import { selectCars } from '../../redux/cars/cars.selectors';
+import React from 'react';
+
 import CarsItem from './CarsItem/CarsItem';
 import css from './Cars.module.css';
 
-const Cars = () => {
-  const dispatch = useDispatch();
-  const cars = useSelector(selectCars);
-
-  useEffect(() => {
-    dispatch(getCars());
-  }, [dispatch]);
-
-  console.log(cars);
-
+const Cars = ({ cars }) => {
   return (
     <div className={css.card_list_container}>
       <ul className={css.cars_list}>

@@ -1,17 +1,16 @@
-import React from "react";
-import css from "./FilterContainer.module.css";
-import { useSelector } from "react-redux";
+import React from 'react';
+import css from './FilterContainer.module.css';
+import { useSelector } from 'react-redux';
 import {
   selectBrands,
   selectRentalPrices,
-} from "../../redux/filters/filters.selectors";
-import Select from "react-select";
-import { customStyles } from "./selectStyles";
+} from '../../redux/filters/filters.selectors';
+import Select from 'react-select';
+import { customStyles } from './selectStyles';
 
 const FilterContainer = () => {
   const brands = useSelector(selectBrands);
   const rentalPrices = useSelector(selectRentalPrices);
-  console.log(rentalPrices);
 
   return (
     <div className={css.filter_container}>
@@ -19,7 +18,7 @@ const FilterContainer = () => {
         <label className={css.select_brand_label}>
           <p className={css.select_title}>Car brand</p>
           <Select
-            options={brands.map((brand) => ({
+            options={brands.map(brand => ({
               value: brand,
               label: brand,
             }))}
@@ -32,7 +31,7 @@ const FilterContainer = () => {
           <p className={css.select_title}>Price/ 1 hour</p>
           <Select
             className={css.filter_select}
-            options={rentalPrices.map((price) => ({
+            options={rentalPrices.map(price => ({
               value: price,
               label: price,
             }))}
