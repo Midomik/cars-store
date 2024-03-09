@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/cars-store/static/css/main.59d34fa9.css",
-    "main.js": "/cars-store/static/js/main.d2deabd4.js",
+    "main.css": "/cars-store/static/css/main.cef2aa70.css",
+    "main.js": "/cars-store/static/js/main.9380ea49.js",
     "static/js/123.e694abcb.chunk.js": "/cars-store/static/js/123.e694abcb.chunk.js",
-    "static/css/623.8e207a05.chunk.css": "/cars-store/static/css/623.8e207a05.chunk.css",
-    "static/js/623.d707af5f.chunk.js": "/cars-store/static/js/623.d707af5f.chunk.js",
+    "static/css/623.786a8794.chunk.css": "/cars-store/static/css/623.786a8794.chunk.css",
+    "static/js/623.4878053a.chunk.js": "/cars-store/static/js/623.4878053a.chunk.js",
     "static/js/212.dcf496bb.chunk.js": "/cars-store/static/js/212.dcf496bb.chunk.js",
     "static/js/31.34232ae3.chunk.js": "/cars-store/static/js/31.34232ae3.chunk.js",
     "static/media/Inter-Medium.ttf": "/cars-store/static/media/Inter-Medium.3f7acfe50aad7ad68548.ttf",
@@ -12,16 +12,16 @@
     "static/media/Manrope-Medium.ttf": "/cars-store/static/media/Manrope-Medium.08894ccb04665d1a9d53.ttf",
     "static/media/Manrope-Regular.ttf": "/cars-store/static/media/Manrope-Regular.a9b9e09fe6b69741f316.ttf",
     "index.html": "/cars-store/index.html",
-    "main.59d34fa9.css.map": "/cars-store/static/css/main.59d34fa9.css.map",
-    "main.d2deabd4.js.map": "/cars-store/static/js/main.d2deabd4.js.map",
+    "main.cef2aa70.css.map": "/cars-store/static/css/main.cef2aa70.css.map",
+    "main.9380ea49.js.map": "/cars-store/static/js/main.9380ea49.js.map",
     "123.e694abcb.chunk.js.map": "/cars-store/static/js/123.e694abcb.chunk.js.map",
-    "623.8e207a05.chunk.css.map": "/cars-store/static/css/623.8e207a05.chunk.css.map",
-    "623.d707af5f.chunk.js.map": "/cars-store/static/js/623.d707af5f.chunk.js.map",
+    "623.786a8794.chunk.css.map": "/cars-store/static/css/623.786a8794.chunk.css.map",
+    "623.4878053a.chunk.js.map": "/cars-store/static/js/623.4878053a.chunk.js.map",
     "212.dcf496bb.chunk.js.map": "/cars-store/static/js/212.dcf496bb.chunk.js.map",
     "31.34232ae3.chunk.js.map": "/cars-store/static/js/31.34232ae3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.59d34fa9.css",
-    "static/js/main.d2deabd4.js"
+    "static/css/main.cef2aa70.css",
+    "static/js/main.9380ea49.js"
   ]
 }
