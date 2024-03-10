@@ -3,11 +3,11 @@
     url('../../assets/6b142861-e420-4e8f-8914-3a5de63b05ae.webp');
 
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
   background-position: center;
+  background-size: cover;
+  width: 100%;
+  overflow-x: hidden;
+  background-attachment: fixed;
 }
 .main_container {
   color: white;
@@ -68,6 +68,11 @@
   justify-content: center;
   gap: 20px;
 }
+
+.final_block {
+  margin-bottom: 30px;
+}
+
 .welcome_wish {
   text-align: center;
   margin-bottom: 15px;

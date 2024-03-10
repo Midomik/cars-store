@@ -72,7 +72,7 @@ const WelcomePage = () => {
           </ul>
         </div>
 
-        <div className={css.finalBlock}>
+        <div className={css.final_block}>
           <h2 className={css.welcome_wish}>
             Wishing You Safe Travels and Unforgettable Adventures!
           </h2>
