@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/cars-store/static/css/main.edf19dfd.css",
-    "main.js": "/cars-store/static/js/main.e3239d43.js",
+    "main.css": "/cars-store/static/css/main.7cbff7f4.css",
+    "main.js": "/cars-store/static/js/main.d95b593d.js",
     "static/media/Inter-Medium.ttf": "/cars-store/static/media/Inter-Medium.3f7acfe50aad7ad68548.ttf",
+    "static/media/6b142861-e420-4e8f-8914-3a5de63b05ae.webp": "/cars-store/static/media/6b142861-e420-4e8f-8914-3a5de63b05ae.07b6e20fd2aeedcce061.webp",
     "static/media/Manrope-SemiBold.ttf": "/cars-store/static/media/Manrope-SemiBold.310f108cc524df0e5ffc.ttf",
     "static/media/Manrope-Medium.ttf": "/cars-store/static/media/Manrope-Medium.08894ccb04665d1a9d53.ttf",
     "static/media/Manrope-Regular.ttf": "/cars-store/static/media/Manrope-Regular.a9b9e09fe6b69741f316.ttf",
     "index.html": "/cars-store/index.html",
-    "main.edf19dfd.css.map": "/cars-store/static/css/main.edf19dfd.css.map",
-    "main.e3239d43.js.map": "/cars-store/static/js/main.e3239d43.js.map"
+    "main.7cbff7f4.css.map": "/cars-store/static/css/main.7cbff7f4.css.map",
+    "main.d95b593d.js.map": "/cars-store/static/js/main.d95b593d.js.map"
   },
   "entrypoints": [
-    "static/css/main.edf19dfd.css",
-    "static/js/main.e3239d43.js"
+    "static/css/main.7cbff7f4.css",
+    "static/js/main.d95b593d.js"
   ]
 }
