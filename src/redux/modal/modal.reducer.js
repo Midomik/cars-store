@@ -15,7 +15,6 @@ export const getCarById = createAsyncThunk(
   async (id, thunkApi) => {
     try {
       const { data } = await axios.get(`/cars/${id}`);
-      console.log(data);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);

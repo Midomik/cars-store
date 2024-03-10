@@ -11,7 +11,6 @@ export const LineIcon = () => {
     </svg>
   );
 };
-// stroke="#121417"
 
 export const CloseModalIcon = () => {
   return (

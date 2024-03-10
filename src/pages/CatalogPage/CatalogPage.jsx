@@ -3,12 +3,11 @@ import css from './CatalogPage.module.css';
 import FilterContainer from '../../components/FilterContainer/FilterContainer';
 import Cars from 'components/Cars/Cars';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllCars, getCars } from '../../redux/cars/cars.reducer';
+import { getAllCars, getCars, loadMore } from '../../redux/cars/cars.reducer';
 import { selectCars, selectTotalCars } from '../../redux/cars/cars.selectors';
 import Modal from 'components/Modal/Modal';
 import { selectIsOpenModal } from '../../redux/modal/modal.selector';
 import { selectFilteredCars } from '../../redux/filters/filters.selectors';
-// import { setOpenModal } from '../../redux/modal/modal.reducer';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -25,23 +24,20 @@ const CatalogPage = () => {
 
   useEffect(() => {
     dispatch(getCars({ page: page, limit: 12 }));
-  }, [dispatch, page]);
+    // eslint-disable-next-line
+  }, [dispatch]);
 
   const handlerLoadMore = () => {
-    setPage(page + 1);
+    const nextPage = page + 1;
+    setPage(nextPage);
+    dispatch(loadMore({ page: nextPage, limit: 12 }));
   };
 
   const visibleCars = filteredCars === null ? cars : filteredCars;
 
   let isVisibleLoadMore = false;
-  if (
-    filteredCars === null
-      ? totalHits
-      : filteredCars.length > 12 &&
-        Math.ceil(
-          filteredCars === null ? totalHits : filteredCars.length / 12
-        ) > page
-  ) {
+
+  if (totalHits > 12 && Math.ceil(totalHits / 12) > page) {
     isVisibleLoadMore = true;
   }
   return (

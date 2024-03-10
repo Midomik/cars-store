@@ -19,7 +19,6 @@ const filtersSlice = createSlice({
     filterCars: (state, { payload }) => {
       const { cars, filterInfo } = payload;
       const { barnd, rentalPrice, mileageFrom, mileageTo } = filterInfo;
-      console.log(cars);
       const filteredCars = cars.filter(car => {
         if (barnd && car.make !== barnd) {
           return false;

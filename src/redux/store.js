@@ -19,7 +19,6 @@ const favoritesConfig = {
   key: 'favorites',
   storage,
   whitelist: ['favorites'],
-  //blacklist:['filter']
 };
 
 export const store = configureStore({

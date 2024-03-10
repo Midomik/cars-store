@@ -5,7 +5,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 const SharedLayout = ({ children }) => {
   const location = useLocation();
   const isWelcomePage = location.pathname === '/';
-  console.log(location.pathname);
+
   return (
     <div
       className={

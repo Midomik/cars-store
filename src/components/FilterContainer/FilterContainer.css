@@ -1,5 +1,5 @@
 .css-1jqq78o-placeholder {
-  font-family: "Manrope-500", sans-serif;
+  font-family: 'Manrope-500', sans-serif;
   font-size: 18px;
   line-height: 1.11111;
   color: var(--black-bold-color) !important;
@@ -26,12 +26,8 @@
   height: 188px !important;
 }
 .css-1dimb5e-singleValue {
-  font-family: "Manrope-500", sans-serif;
+  font-family: 'Manrope-500', sans-serif;
   font-size: 18px;
   line-height: 1.11111;
   color: var(--black-bold-color) !important;
 }
-
-/* .css-x06xtr-option {
-  background-color: var(--filter-select-color) !important;
-} */

@@ -20,11 +20,6 @@ const Cars = ({ cars }) => {
             rentalPrice,
             functionalities,
             year,
-            // fuelConsumption,
-            // engineSize,
-            // description,
-            // rentalConditions,
-            // mileage,
           } = car;
 
           return (
@@ -41,11 +36,6 @@ const Cars = ({ cars }) => {
               rentalPrice={rentalPrice}
               functionalities={functionalities}
               year={year}
-              //   fuelConsumption={fuelConsumption}
-              //   engineSize={engineSize}
-              //   description={description}
-              //   rentalConditions={rentalConditions}
-              //   mileage={mileage}
             />
           );
         })}

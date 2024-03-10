@@ -42,6 +42,25 @@ export const getAllCars = createAsyncThunk(
   }
 );
 
+export const loadMore = createAsyncThunk(
+  'cars/loadMore',
+  async (res, thunkApi) => {
+    try {
+      const { data } = await axios.get(
+        'cars',
+        res.page
+          ? {
+              params: { page: res.page, limit: res.limit },
+            }
+          : {}
+      );
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
 const CarsSlice = createSlice({
   name: 'cars',
   initialState,
@@ -57,18 +76,25 @@ const CarsSlice = createSlice({
     builder
       .addCase(getCars.fulfilled, (state, { payload }) => {
         state.cars.isLoading = false;
-        state.cars.items = [...state.cars.items, ...payload];
+        state.cars.items = [...payload];
       })
       .addCase(getAllCars.fulfilled, (state, { payload }) => {
         state.cars.isLoading = false;
         state.cars.totalItems = payload;
       })
-      .addMatcher(isAnyOf(getCars.pending, getAllCars.pending), state => {
-        state.cars.isLoading = true;
-        state.cars.error = null;
+      .addCase(loadMore.fulfilled, (state, { payload }) => {
+        state.cars.isLoading = false;
+        state.cars.items = [...state.cars.items, ...payload];
       })
       .addMatcher(
-        isAnyOf(getCars.rejected, getAllCars.rejected),
+        isAnyOf(getCars.pending, getAllCars.pending, loadMore.pending),
+        state => {
+          state.cars.isLoading = true;
+          state.cars.error = null;
+        }
+      )
+      .addMatcher(
+        isAnyOf(getCars.rejected, getAllCars.rejected, loadMore.rejected),
         (state, { payload }) => {
           state.cars.isLoading = false;
           state.cars.error = payload;

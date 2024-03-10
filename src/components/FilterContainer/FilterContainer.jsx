@@ -26,7 +26,6 @@ const FilterContainer = () => {
       rentalPriceChoice.value === undefined ? '' : rentalPriceChoice.value;
     const mileageFrom = from.value;
     const mileageTo = to.value;
-    console.log(cars);
     const data = {
       cars,
       filterInfo: { barnd, rentalPrice, mileageFrom, mileageTo },
