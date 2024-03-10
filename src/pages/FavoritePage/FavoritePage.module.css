@@ -1,0 +1,17 @@
+.favorite_container {
+  margin-top: 150px;
+}
+
+.load_more_btn {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  background-color: transparent;
+  border: none;
+  font-family: 'Manrope-500', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #3470ff;
+}

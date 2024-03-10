@@ -2,6 +2,16 @@
   width: 274px;
 }
 
+.card_img_container {
+  position: relative;
+}
+
+.FavoriteIcon_container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
 .card_img {
   width: 274px;
   height: 268px;

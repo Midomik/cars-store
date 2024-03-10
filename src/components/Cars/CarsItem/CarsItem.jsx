@@ -1,8 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import css from './CarsItem.module.css';
-import { LineIcon } from 'assets/sprite';
-import { useDispatch } from 'react-redux';
+import { FavoriteIcon, LineIcon } from 'assets/sprite';
+import { useDispatch, useSelector } from 'react-redux';
 import { getCarById, setOpenModal } from '../../../redux/modal/modal.reducer';
+import { selectFavorites } from '../../../redux/cars/cars.selectors';
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from '../../../redux/cars/cars.reducer';
 
 const CarsItem = ({
   id,
@@ -16,15 +21,12 @@ const CarsItem = ({
   rentalPrice,
   functionalities,
   year,
-  // fuelConsumption,
-  // engineSize,
-  // description,
-  // rentalConditions,
 }) => {
   const [, city, country] = address.split(', ');
   const containerRef = useRef(null);
   const [showPremium, setShowPremium] = useState(true);
   const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
 
   useEffect(() => {
     const containerWidthWithoutGap = 225;
@@ -46,9 +48,27 @@ const CarsItem = ({
     document.body.style.overflow = 'hidden';
   };
 
+  const isFavorite = favorites.includes(id);
+
+  const handlerClickOnFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorites(id));
+    } else {
+      dispatch(addToFavorites(id));
+    }
+  };
+
   return (
     <li className={css.card_item}>
-      <img className={css.card_img} src={img} alt={make} />
+      <div className={css.card_img_container}>
+        <img className={css.card_img} src={img} alt={make} />
+        <div
+          onClick={handlerClickOnFavorite}
+          className={css.FavoriteIcon_container}
+        >
+          <FavoriteIcon isFavorite={isFavorite} />
+        </div>
+      </div>
 
       <div className={css.card_main_title}>
         <h3 className={css.card_make_model_year}>

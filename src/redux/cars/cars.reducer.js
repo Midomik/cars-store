@@ -5,23 +5,31 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://65e86dfe4bb72f0a9c4f4ec6.mockapi.io/';
 
 const initialState = {
-  cars: { totalItems: 0, items: [], isLoading: false, error: null },
+  cars: {
+    totalItems: 0,
+    items: [],
+    isLoading: false,
+    error: null,
+  },
+  favorites: [],
 };
 
-export const getCars = createAsyncThunk(
-  'cars/get',
-  async ({ page, limit }, thunkApi) => {
-    try {
-      const { data } = await axios.get('cars', {
-        params: { page, limit },
-      });
-      return data;
-    } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
-    }
+export const getCars = createAsyncThunk('cars/get', async (res, thunkApi) => {
+  try {
+    const { data } = await axios.get(
+      'cars',
+      res.page
+        ? {
+            params: { page: res.page, limit: res.limit },
+          }
+        : {}
+    );
+    return data;
+  } catch (error) {
+    return thunkApi.rejectWithValue(error.message);
   }
-);
-// export const gaga = createAsyncThunk('cars/gagag',async(_))
+});
+
 export const getAllCars = createAsyncThunk(
   'cars/getAll',
   async (_, thunkApi) => {
@@ -37,11 +45,14 @@ export const getAllCars = createAsyncThunk(
 const CarsSlice = createSlice({
   name: 'cars',
   initialState,
-  //   reducers: {
-  //     setInitialState: (state, { payload }) => {
-  //       state.page = payload;
-  //     },
-  //   },
+  reducers: {
+    addToFavorites: (state, { payload }) => {
+      state.favorites.push(payload);
+    },
+    removeFromFavorites: (state, { payload }) => {
+      state.favorites = state.favorites.filter(id => id !== payload);
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(getCars.fulfilled, (state, { payload }) => {
@@ -67,4 +78,4 @@ const CarsSlice = createSlice({
 });
 
 export const carsReducer = CarsSlice.reducer;
-// export const { setPage } = filtersSlice.actions;
+export const { addToFavorites, removeFromFavorites } = CarsSlice.actions;

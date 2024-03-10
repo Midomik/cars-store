@@ -7,6 +7,7 @@ const SharedLayout = ({ children }) => {
       <header>
         <NavLink to="/">Welcome</NavLink>{' '}
         <NavLink to="/catalog">Catalog</NavLink>{' '}
+        <NavLink to="/favorites">Favorites</NavLink>{' '}
       </header>
       <main>{children}</main>
     </>
