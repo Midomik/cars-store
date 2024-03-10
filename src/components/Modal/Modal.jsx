@@ -32,6 +32,7 @@ const Modal = () => {
     return () => {
       window.removeEventListener('keydown', closeModalFromEsc);
     };
+    // eslint-disable-next-line
   }, []);
 
   if (!cardInfo) {
