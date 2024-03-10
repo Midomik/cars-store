@@ -12,16 +12,6 @@ well as make online reservations.
 4. Detailed information about each car (technical specifications, photos, etc.)
 5. Online car reservation
 
-## Підготовка до роботи
-
-1. Переконайся що на комп'ютері встановлено LTS-версія Node.js.
-   [Завантаж і встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встанови базові залежності проєкту командою `npm install`.
-3. Запусти режим розробки, виконавши команду `npm start`.
-4. Перейди в браузері за адресою [http://localhost:3000](http://localhost:3000).
-   Ця сторінка буде автоматично перезавантажуватися після збереження змін у
-   файлах проєкту.
-
 ## Technologies
 
 This project utilizes modern web development technologies, including:
