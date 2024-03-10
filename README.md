@@ -27,5 +27,4 @@ This project is created by Yurii Novosad
 ![Welcome page](./assets/Screenshot_1.png)
 ![Catalog page](./assets/Screenshot_2.png)
 ![Filter bar](./assets/Screenshot_3.png)
-![Favorite page](./assets/Screenshot_4.png.png)
-![Modal](./assets/Screenshot_5.png)
+![Favorite page](./assets/Screenshot_4.png) ![Modal](./assets/Screenshot_5.png)
