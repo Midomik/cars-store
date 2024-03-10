@@ -4,13 +4,17 @@ import Cars from 'components/Cars/Cars';
 import FilterContainer from 'components/FilterContainer/FilterContainer';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCars, selectFavorites } from '../../redux/cars/cars.selectors';
-import { getCars } from '../../redux/cars/cars.reducer';
+import { getAllCars, getCars } from '../../redux/cars/cars.reducer';
 import { selectIsOpenModal } from '../../redux/modal/modal.selector';
 import Modal from 'components/Modal/Modal';
+import { selectFilteredCars } from '../../redux/filters/filters.selectors';
 
 const FavoritePage = () => {
   const dispatch = useDispatch();
-  const cars = useSelector(selectCars);
+  const filteredCars = useSelector(selectFilteredCars);
+  const allCars = useSelector(selectCars);
+  const cars = filteredCars === null ? allCars : filteredCars;
+
   const favoritesIds = useSelector(selectFavorites);
   const isOpenModal = useSelector(selectIsOpenModal);
   const favoriteCars = cars.filter(car =>
@@ -27,6 +31,10 @@ const FavoritePage = () => {
   const loadMore = () => {
     setCurrentPage(currentPage + 1);
   };
+
+  useEffect(() => {
+    dispatch(getAllCars());
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getCars({}));

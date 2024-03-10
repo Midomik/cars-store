@@ -6,7 +6,7 @@ axios.defaults.baseURL = 'https://65e86dfe4bb72f0a9c4f4ec6.mockapi.io/';
 
 const initialState = {
   cars: {
-    totalItems: 0,
+    totalItems: [],
     items: [],
     isLoading: false,
     error: null,
@@ -35,7 +35,7 @@ export const getAllCars = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { data } = await axios.get('cars');
-      return data.length;
+      return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }

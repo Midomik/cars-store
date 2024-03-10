@@ -1,20 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import css from './FilterContainer.module.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   selectBrands,
   selectRentalPrices,
 } from '../../redux/filters/filters.selectors';
 import Select from 'react-select';
 import { customStyles } from './selectStyles';
+import { filterCars } from '../../redux/filters/filters.reducer';
+import { selectTotalCars } from '../../redux/cars/cars.selectors';
 
 const FilterContainer = () => {
+  const dispatch = useDispatch();
   const brands = useSelector(selectBrands);
   const rentalPrices = useSelector(selectRentalPrices);
+  const cars = useSelector(selectTotalCars);
+  const [modelChoice, setModelChoice] = useState('');
+  const [rentalPriceChoice, setRentalPriceChoice] = useState('');
+
+  const handlerFormFilter = e => {
+    e.preventDefault();
+    const { from, to } = e.target.elements;
+    const barnd = modelChoice.value === undefined ? '' : modelChoice.value;
+    const rentalPrice =
+      rentalPriceChoice.value === undefined ? '' : rentalPriceChoice.value;
+    const mileageFrom = from.value;
+    const mileageTo = to.value;
+    console.log(cars);
+    const data = {
+      cars,
+      filterInfo: { barnd, rentalPrice, mileageFrom, mileageTo },
+    };
+    dispatch(filterCars(data));
+  };
 
   return (
     <div className={css.filter_container}>
-      <form className={css.filter_form}>
+      <form onSubmit={handlerFormFilter} className={css.filter_form}>
         <label className={css.select_brand_label}>
           <p className={css.select_title}>Car brand</p>
           <Select
@@ -24,6 +46,7 @@ const FilterContainer = () => {
             }))}
             placeholder="Enter the text"
             styles={customStyles}
+            onChange={choice => setModelChoice(choice)}
           />
         </label>
 
@@ -38,6 +61,7 @@ const FilterContainer = () => {
             placeholder="To $"
             heiight={48}
             styles={customStyles}
+            onChange={choice => setRentalPriceChoice(choice)}
           />
         </label>
 
@@ -47,21 +71,19 @@ const FilterContainer = () => {
           <input
             className={css.mileage_from}
             type="text"
-            name="mileage-from"
+            name="from"
             placeholder="From"
           />
 
           <input
             className={css.mileage_to}
             type="text"
-            name="mileage-to"
+            name="to"
             placeholder="To"
           />
         </label>
 
-        <button className={css.filter_btn_submit} type="submit">
-          Search
-        </button>
+        <button className={css.filter_btn_submit}>Search</button>
       </form>
     </div>
   );
