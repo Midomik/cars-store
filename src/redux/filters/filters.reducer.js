@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { brands, rentalPrices } from "../../data/filters";
+import { createSlice } from '@reduxjs/toolkit';
+import { brands, rentalPrices } from '../../data/filters';
 // import {
 //   getCategories,
 //   getIngredients,
@@ -14,7 +14,7 @@ const initialState = {
 };
 
 const filtersSlice = createSlice({
-  name: "filters",
+  name: 'filters',
   initialState,
   reducers: {
     setInitialState: (state, { payload }) => {
@@ -24,4 +24,4 @@ const filtersSlice = createSlice({
 });
 
 export const filtersReducer = filtersSlice.reducer;
-export const { setPage } = filtersSlice.actions;
+export const { setInitialState } = filtersSlice.actions;

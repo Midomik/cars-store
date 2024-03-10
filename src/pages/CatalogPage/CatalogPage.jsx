@@ -5,10 +5,14 @@ import Cars from 'components/Cars/Cars';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCars, getCars } from '../../redux/cars/cars.reducer';
 import { selectCars, selectTotalCars } from '../../redux/cars/cars.selectors';
+import Modal from 'components/Modal/Modal';
+import { selectIsOpenModal } from '../../redux/modal/modal.selector';
+// import { setOpenModal } from '../../redux/modal/modal.reducer';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
   const totalHits = useSelector(selectTotalCars);
+  const isOpenModal = useSelector(selectIsOpenModal);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -19,6 +23,7 @@ const CatalogPage = () => {
 
   useEffect(() => {
     dispatch(getCars({ page: page, limit: 12 }));
+    console.log('dasc');
   }, [dispatch, page]);
 
   const handlerLoadMore = () => {
@@ -29,18 +34,18 @@ const CatalogPage = () => {
   if (totalHits > 12 && Math.ceil(totalHits / 12) > page) {
     isVisibleLoadMore = true;
   }
+
   return (
-    <main className={css.main_catalog_page}>
-      <div className={`container ${css.catalog_container}`}>
-        <FilterContainer />
-        <Cars cars={cars} />
-        {isVisibleLoadMore && (
-          <button className={css.load_more_btn} onClick={handlerLoadMore}>
-            Load more
-          </button>
-        )}
-      </div>
-    </main>
+    <div className={`container ${css.catalog_container}`}>
+      <FilterContainer />
+      <Cars cars={cars} />
+      {isVisibleLoadMore && (
+        <button className={css.load_more_btn} onClick={handlerLoadMore}>
+          Load more
+        </button>
+      )}
+      {isOpenModal && <Modal />}
+    </div>
   );
 };
 

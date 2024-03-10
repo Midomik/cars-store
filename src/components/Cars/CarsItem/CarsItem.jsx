@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import css from './CarsItem.module.css';
 import { LineIcon } from 'assets/sprite';
+import { useDispatch } from 'react-redux';
+import { getCarById, setOpenModal } from '../../../redux/modal/modal.reducer';
 
 const CarsItem = ({
   id,
@@ -14,10 +16,15 @@ const CarsItem = ({
   rentalPrice,
   functionalities,
   year,
+  // fuelConsumption,
+  // engineSize,
+  // description,
+  // rentalConditions,
 }) => {
   const [, city, country] = address.split(', ');
   const containerRef = useRef(null);
   const [showPremium, setShowPremium] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const containerWidthWithoutGap = 225;
@@ -32,6 +39,12 @@ const CarsItem = ({
   const functionality = functionalities.reduce((shortest, current) => {
     return current.length < shortest.length ? current : shortest;
   }, functionalities[0]);
+
+  const openModal = () => {
+    dispatch(getCarById(id));
+    dispatch(setOpenModal(id));
+    document.body.style.overflow = 'hidden';
+  };
 
   return (
     <li className={css.card_item}>
@@ -64,7 +77,9 @@ const CarsItem = ({
         </p>
       </div>
 
-      <button className={css.card_btn_learn_more}>Learn more</button>
+      <button onClick={openModal} className={css.card_btn_learn_more}>
+        Learn more
+      </button>
     </li>
   );
 };
