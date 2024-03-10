@@ -10,7 +10,7 @@
 
 .modal {
   margin-top: 150px;
-  max-width: 540px;
+  max-width: 500px;
   width: 100%;
   min-height: 400px;
   background-color: #fff;
@@ -88,6 +88,7 @@
 .car_functionalities {
   display: flex;
   gap: 6px;
+  flex-wrap: wrap;
   font-family: 'Manrope-400', sans-serif;
   font-size: 12px;
   line-height: 1.5;
