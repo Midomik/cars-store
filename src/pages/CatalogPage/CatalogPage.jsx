@@ -25,7 +25,6 @@ const CatalogPage = () => {
 
   useEffect(() => {
     dispatch(getCars({ page: page, limit: 12 }));
-    console.log('dasc');
   }, [dispatch, page]);
 
   const handlerLoadMore = () => {

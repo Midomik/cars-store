@@ -1,0 +1,20 @@
+header {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.global_container_welcome {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../../assets/6b142861-e420-4e8f-8914-3a5de63b05ae.webp');
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  overflow-x: hidden;
+  background-attachment: fixed;
+}
+.global_container_another {
+  background-color: white;
+}

@@ -2,7 +2,6 @@ import React from 'react';
 import css from './WelcomePage.module.css';
 
 const WelcomePage = () => {
-  console.log(css);
   return (
     <div className={css.welcome_container}>
       <div className={`container ${css.main_container}`}>
